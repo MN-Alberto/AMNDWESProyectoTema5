@@ -1,3 +1,10 @@
+<?php
+    if(isset($_REQUEST['Login'])){
+        header("Location: ./codigoPHP/login.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,7 +22,16 @@
             color: white;
             padding: 15px;
             text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
         }
+        
+        form{
+            position: relative;
+            left: 70%;
+        }
+        
         h1 {
             margin: 0;
         }
@@ -78,16 +94,20 @@
         tr{
             height: 80px;
         }
+        h2{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1><b>Login/Logoff Tema 5</b></h1>
+        <img src="webroot/logo.png" alt="logo" height="100px"/>
+        <h1><b>Inicio Público</b></h1>
+        <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post">
+            <input type="submit" id="Login" name="Login" value="Login">
+        </form> 
     </header>
-    <main>
-        
-                     
-    </main>
+            <h2>Login</h2>
     <footer>
         <h4>2025-26 IES LOS SAUCES. © Todos los derechos reservados.</h4>
         <p><a href="../../AMNDWESProyectoDWES/indexProyectoDWES.php">Alberto Méndez.</a> Fecha de Actualización : 20-11-2025</p>
