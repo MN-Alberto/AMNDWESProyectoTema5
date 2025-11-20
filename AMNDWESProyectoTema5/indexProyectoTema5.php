@@ -88,10 +88,42 @@
     </header>
     <main>
         <h2><b>CONTENIDO</b></h2>
-       
-        <h4><a href="mostrarCodigo/mostrarCreacion.php">Script de creación</a></h4>
-        <h4><a href="mostrarCodigo/mostrarInsert.php">Script de inserción inicial</a></h4>
-        <h4><a href="mostrarCodigo/mostrarBorrado.php">Script de borrado</a></h4>
+        
+        <table border solid black 2px>
+            <tr id="encabezado">
+                <td style="width: 200px;">DESCRIPCIÓN</td>
+                <td style="width: 50px;">Desarrollo</td>
+                <td style="width: 50px;">Explotación</td>
+                <td style="width: 200px;">Descrpción</td>
+                <td style="width: 50px;">Desarrollo</td>
+                <td style="width: 50px;">Explotación</td>
+            </tr>
+            
+            <tr>
+                <td>Creación de la base de Datos y del usuario.</td>
+                <td><a href="mostrarCodigo/mostrarCreacion.php">Ver</a></td>
+                <td><a href="mostrarCodigo/mostrarCrearExplotacion.php">Ver</a></td>
+                <td>Librería Validación.</td>
+                <td colspan="2"><a href="mostrarCodigo/mostrarLibreria.php">Ver</a></td>
+            </tr>
+            
+            <tr>
+                <td>Carga de la base de Datos.</td>
+                <td><a href="mostrarCodigo/mostrarInsert.php">Ver</a></td>
+                <td><a href="mostrarCodigo/mostrarInsert.php">Ver</a></td>
+                <td>Fichero de configuración PDO.</td>
+                <td colspan="2"><a href="mostrarCodigo/mostrarPDO.php">Ver</a></td>
+            </tr>
+            
+            <tr>
+                <td>Borrado de la base de Datos.</td>
+                <td><a href="mostrarCodigo/mostrarBorrado.php">Ver</a></td>
+
+            </tr>
+            
+        </table>
+        
+        <br><br><br>
         
         <table border solid black 2px>
             <tr id="encabezado">
@@ -118,8 +150,8 @@
             <tr>
                 <td>2</td>
                 <td>Desarrollo de un control de acceso con identificación del usuario basado en la función header() y en el uso de una tabla “Usuario” de la base de datos. (PDO).</td>
-                <td class="codigos"><a href="codigoPHP/ejercicio1.php">Ejecutar</a></td>
-                <td class="mostrar"><a href="mostrarCodigo/mostrarEjercicio1.php">Ver código</a></td>
+                <td class="codigos"><a href="codigoPHP/ejercicio2.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="mostrarCodigo/mostrarEjercicio2.php">Ver código</a></td>
             </tr>
     </main>
 </body>

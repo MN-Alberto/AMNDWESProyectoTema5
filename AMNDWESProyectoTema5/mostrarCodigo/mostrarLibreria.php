@@ -21,7 +21,6 @@
             margin: 0;
         }
         main {
-            max-width: 1000px;
             margin: 30px auto;
             padding: 20px;
             background: white;
@@ -80,15 +79,15 @@
 </head>
 <body>
     <header>
-        <h1><b>UT5: DESARROLLO DE APLICACIONES WEB</b></h1>
+        <h1><b>UT4: TÉCNICAS DE ACCESO A DATOS EN PHP</b></h1>
         <a href="../../AMNDWESProyectoDWES/indexProyectoDWES.php">Alberto Méndez Núñez | 03/10/2025</a>
         <p>Curso 2025/2026 - Grupo DAW2</p>
     </header>
     <main>
-        <h2><b>Muestra del código de la carga inicial en la base de datos DEPARTAMENTOS y USUARIOS</b></h2>
+        <h2><b>Muestra del código de la librería de validación de los formularios.</b></h2>
         
         <?php
-        highlight_file("../scriptDB/CargaInicialDBAMNDWESEncuestaTema5.sql");
+        highlight_file("../codigoPHP/libreriaValidacionFormulario.php");
         ?>
         
     </main>
