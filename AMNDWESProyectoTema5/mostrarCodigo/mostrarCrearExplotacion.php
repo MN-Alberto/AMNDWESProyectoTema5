@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,11 +21,12 @@
             margin: 0;
         }
         main {
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: 30px auto;
             padding: 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);      
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         ul {
             list-style: none;
@@ -71,19 +73,7 @@
         }
         
         tr{
-            height: 40px;
-        }
-        
-        tr:nth-child(1){
-            background-color: lightblue;
-        }
-        
-        table{
-            width: 800px;
-        }
-        
-        td{
-            border: 1px solid black;
+            height: 80px;
         }
 
     </style>
@@ -91,21 +81,16 @@
 <body>
     <header>
         <h1><b>UT5: DESARROLLO DE APLICACIONES WEB</b></h1>
-        <h4><a href="../../AMNDWESProyectoDWES/indexProyectoDWES.php">Alberto Méndez Núñez | 03/10/2025</a></h4>
+        <a href="../../AMNDWESProyectoDWES/indexProyectoDWES.php">Alberto Méndez Núñez | 03/10/2025</a>
         <p>Curso 2025/2026 - Grupo DAW2</p>
     </header>
     <main>
-        <h2><b>Ejercicio 2</b></h2>
+        <h2><b>Muestra del código de creación de la base de datos DEPARTAMENTOS y USUARIOS en Explotación</b></h2>
         
         <?php
-         /*
-         * Autor: Alberto Méndez Núñez
-         * Fecha de ultima modificación: 18/11/2025
-         * Desarrollo de un control de acceso con identificación del usuario basado en la función header() y en el uso de una tabla “Usuario” de la base de datos. (PDO).
-         */
+        highlight_file("../scriptDB/crearExplotacion.sql");
         ?>
-       
-        <h1>Working...</h1>
+        
     </main>
 </body>
 </html>

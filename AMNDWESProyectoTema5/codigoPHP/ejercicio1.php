@@ -2,7 +2,7 @@
         
                 /*
          * Autor: Alberto Méndez Núñez
-         * Fecha de ultima modificación: 17/11/2025
+         * Fecha de ultima modificación: 18/11/2025
          * Desarrollo de un control de acceso con identificación del usuario basado en la función header().
          */
         
@@ -12,21 +12,23 @@
               "heraclio"=>[hash('sha256', 'paso'),"Heraclio"]
             ];
             
-            
+            // comprobamos que el usuario y la contraseña tienen algo
             if(!isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'])){
                 header('WWW-Authenticate: Basic realm="No autorizado"');
                 header('HTTP/1.0 401 Unauthorized');
-                exit;
+                exit; // si no termina aqui el programa
             }
             
+            // si lo tiene, le asignamos el valor  las variables $user y $password
             $user=$_SERVER['PHP_AUTH_USER'];
             $password=$_SERVER['PHP_AUTH_PW'];
             
+            //comprobamos si el usuario introducido existe en el array de usuarios y comparamos la contraseña cifrada con la contraseña introducida cifrada. 
             if(!array_key_exists($user, $usuarios) || $usuarios[$user][0] !== hash('sha256',$password)){
                 header('WWW-Authenticate: Basic realm="No autorizado"');
                 header('HTTP/1.0 401 Unauthorized');
                 echo "Usuario o contraseña incorrecto";
-                exit;
+                exit;// si el usuario no existe o la contraseña es incorrecta termina aqui
             }
         ?>
 
@@ -130,7 +132,7 @@
         <h2><b>Ejercicio 1</b></h2>
         
        
-        
+        <!-- mostramos el nombre del usuario que ha accedido correctamente -->
         <h2>Usuario <?php echo $usuarios[$user][1] ?> conectado correctamente.</h2>
     </main>
 </body>

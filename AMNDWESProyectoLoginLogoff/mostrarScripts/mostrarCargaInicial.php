@@ -85,10 +85,10 @@
         <p>Curso 2025/2026 - Grupo DAW2</p>
     </header>
     <main>
-        <h2><b>Muestra del código de la carga inicial en la base de datos DEPARTAMENTOS y USUARIOS</b></h2>
+        <h2><b>Muestra del código de carga inicial de la base de datos DEPARTAMENTOS y USUARIOS</b></h2>
         
         <?php
-        highlight_file("../scriptDB/CargaInicialDBAMNDWESEncuestaTema5.sql");
+        highlight_file("../scriptDB/CargaInicialDBAMNDWESProyectoLoginLogoff.sql");
         ?>
         
     </main>

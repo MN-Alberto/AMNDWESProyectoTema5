@@ -80,7 +80,7 @@
 </head>
 <body>
     <header>
-        <h1><b>UT4: TÉCNICAS DE ACCESO A DATOS EN PHP</b></h1>
+        <h1><b>UT5: DESARROLLO DE APLICACIONES WEB</b></h1>
         <a href="../../AMNDWESProyectoDWES/indexProyectoDWES.php">Alberto Méndez Núñez | 03/10/2025</a>
         <p>Curso 2025/2026 - Grupo DAW2</p>
     </header>
