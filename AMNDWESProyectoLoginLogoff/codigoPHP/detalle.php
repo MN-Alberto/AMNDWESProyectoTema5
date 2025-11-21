@@ -102,6 +102,10 @@
         h2{
             text-align: center;
         }
+        form{
+            position: relative;
+            left: 70%;
+        }
     </style>
 </head>
 <body>
@@ -253,7 +257,7 @@
     <footer>
         <h4>2025-26 IES LOS SAUCES. © Todos los derechos reservados.</h4>
         <p><a href="../../../AMNDWESProyectoDWES/indexProyectoDWES.php">Alberto Méndez.</a> Fecha de Actualización : 20-11-2025</p>
-        <a href="https://github.com/MN-Alberto/AMNDWESProyectoTema5" target="_blank"><img src="webroot/img.png" height="40px"/></a>
+        <a href="https://github.com/MN-Alberto/AMNDWESProyectoTema5" target="_blank"><img src="../webroot/img.png" height="40px"/></a>
     </footer>
 </body>
 </html>
