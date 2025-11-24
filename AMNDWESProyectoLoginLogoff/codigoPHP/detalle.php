@@ -3,6 +3,10 @@
         header("Location: ./inicioPrivado.php");
         exit;
     }
+        if(isset($_REQUEST['cerrar'])){
+    header("Location: ../indexLoginLogoff.php");
+    exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -104,7 +108,13 @@
         }
         form{
             position: relative;
-            left: 70%;
+            left: 62%;
+        }
+        input{
+            background-color: lightblue;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -115,6 +125,7 @@
                 <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post">
               <input type="submit" id="Aceptar" name="Aceptar" value="Aceptar"/>
               <input type="submit" id="Cancelar" name="Cancelar" value="Cancelar"/>
+              <input type="submit" id="cerrar" name="cerrar" value="Cerrar Sesion"/>
         </form> 
     </header>
     
@@ -122,6 +133,36 @@
     <?php
     echo '<h2>Contenido de las variables globales $_SERVER, $_COOKIE, $_SESSION, $_REQUEST, $_GET, $_POST, $_FILES, $_ENV</h2>';
         
+                echo '<h3>Contenido de la variable $_COOKIE</h3><br>';
+        echo '<table >';
+        echo '<tr><th>Variable</th><th>Valor</th></tr>';
+            if (!empty($_COOKIE)) {
+                foreach ($_COOKIE as $variable => $resultado) {
+                    echo "<tr>";
+                    echo '<td>$_COOKIE[' . $variable . ']</td>';
+                    echo "<td><pre>" . print_r($resultado, true) . "</pre></td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='2'><em>La variable \$_COOKIE está vacía.</em></td></tr>";
+            }
+        echo "</table>";
+        
+                
+        echo '<h3>Contenido de la variable $_SESSION</h3><br>';
+        echo '<table >';
+        echo '<tr><th>Variable</th><th>Valor</th></tr>';
+            if (!empty($_SESSION)) {
+                foreach ($_SESSION as $variable => $resultado) {
+                    echo "<tr>";
+                    echo '<td>$_SESSION[' . $variable . ']</td>';
+                    echo "<td><pre>" . print_r($resultado, true) . "</pre></td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='2'><em>La variable \$_SESSION está vacía.</em></td></tr>";
+            }
+        echo "</table>";
         
         echo '<h3>Contenido de la variable $_SERVER</h3><br>';
         echo '<table >';
@@ -138,37 +179,6 @@
             }
         echo "</table>";
         
-        
-        echo '<h3>Contenido de la variable $_COOKIE</h3><br>';
-        echo '<table >';
-        echo '<tr><th>Variable</th><th>Valor</th></tr>';
-            if (!empty($_COOKIE)) {
-                foreach ($_COOKIE as $variable => $resultado) {
-                    echo "<tr>";
-                    echo '<td>$_COOKIE[' . $variable . ']</td>';
-                    echo "<td><pre>" . print_r($resultado, true) . "</pre></td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='2'><em>La variable \$_COOKIE está vacía.</em></td></tr>";
-            }
-        echo "</table>";
-        
-        
-        echo '<h3>Contenido de la variable $_SESSION</h3><br>';
-        echo '<table >';
-        echo '<tr><th>Variable</th><th>Valor</th></tr>';
-            if (!empty($_SESSION)) {
-                foreach ($_SESSION as $variable => $resultado) {
-                    echo "<tr>";
-                    echo '<td>$_SESSION[' . $variable . ']</td>';
-                    echo "<td><pre>" . print_r($resultado, true) . "</pre></td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='2'><em>La variable \$_SESSION está vacía.</em></td></tr>";
-            }
-        echo "</table>";
         
         
         echo '<h3>Contenido de la variable $_REQUEST</h3><br>';
