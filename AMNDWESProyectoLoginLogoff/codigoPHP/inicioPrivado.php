@@ -7,6 +7,7 @@
     header("Location: ../indexLoginLogoff.php");
     exit;
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -99,6 +100,16 @@
         h2{
             text-align: center;
         }
+        
+        p{
+            text-align: center;
+        }
+        input{
+            background-color: lightblue;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -106,13 +117,43 @@
      <img src="../webroot/logo.png" alt="logo" height="100px"/>
         <h1><b>Inicio Privado</b></h1>
          <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post">
-        <input type="submit" id="Aceptar" name="Aceptar" value="Aceptar"/>
+        <input type="submit" id="Aceptar" name="Aceptar" value="Detalle"/>
         <input type="submit" id="cerrar" name="cerrar" value="Cerrar Sesion"/>
       </form> 
     </header>
     
     <h2>Login Privado</h2>
-
+        <?php
+            if($_COOKIE["language"]=='ES'){
+           ?>
+        <p>Bienvenido al inicio de sesión privado.</p>
+        <?php
+            }
+        ?>
+        
+        <?php
+            if($_COOKIE["language"]=='EN'){
+           ?>
+        <p>Welcome to the private login window.</p>
+        <?php
+            }
+        ?>
+        
+        <?php
+            if($_COOKIE["language"]=='PT'){
+           ?>
+        <p>Bem-vindo ao login privado.</p>
+        <?php
+            }
+        ?>
+        
+        <?php
+            if($_COOKIE["language"]=='RU'){
+           ?>
+        <p>Добро пожаловать в приватный вход</p>
+        <?php
+            }
+        ?>
     <footer>
         <h4>2025-26 IES LOS SAUCES. © Todos los derechos reservados.</h4>
         <p><a href="../../../AMNDWESProyectoDWES/indexProyectoDWES.php">Alberto Méndez.</a> Fecha de Actualización : 20-11-2025</p>

@@ -100,10 +100,28 @@
         
         #f1{
             position: relative;
-            left: 70%;
+            left: 62%;
         }
         h2{
             text-align: center;
+        }
+        #Entrar{
+            background-color: lightblue;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+        }
+        #Cancelar{
+            background-color: lightblue;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+        }
+        #Registrarse{
+            background-color: lightblue;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -111,14 +129,9 @@
     <header>
      <img src="../webroot/logo.png" alt="logo" height="100px"/>
         <h1><b>Inicio Público</b></h1>
-        <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post" id="f1">
-        <input type="submit" id="Entrar" name="Entrar" value="Entrar"/>
-        <input type="submit" id="Cancelar" name="Cancelar" value="Cancelar"/>
-        <input type="submit" id="Registrarse" name="Registrarse" value="Registrarse"/>
-      </form> 
     </header>
     
-    <h2>Bienvenido al Login</h2>
+    <h2>INICIAR SESIÓN</h2>
     <main>
         <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post">
             <label for="usuario">Nombre de usuario:</label>
@@ -127,6 +140,11 @@
             <br>
             <label for="usuario">Contraseña:</label>
             <input type="password" name="pass" id="pass" placeholder="Introduce una contraseña:">
+            <br>
+            <br>
+            <input type="submit" id="Entrar" name="Entrar" value="Entrar"/>
+            <input type="submit" id="Cancelar" name="Cancelar" value="Cancelar"/>
+            <input type="submit" id="Registrarse" name="Registrarse" value="Registrarse"/>
         </form>
     </main>
     <footer>

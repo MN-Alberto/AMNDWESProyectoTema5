@@ -3,6 +3,26 @@
         header("Location: ./codigoPHP/login.php");
         exit;
     }
+    
+    if(empty($_COOKIE['language'])){
+        setcookie('language','ES',time() + 3600);
+    }
+    
+    if(isset($_REQUEST['español'])){
+        setcookie('language','ES',time() + 3600);
+    }
+    
+    if(isset($_REQUEST['ingles'])){
+        setcookie('language','EN',time() + 3600);
+    }
+    
+    if(isset($_REQUEST['portugues'])){
+        setcookie('language','PT',time() + 3600);
+    }
+    
+    if(isset($_REQUEST['ruso'])){
+        setcookie('language','RU',time() + 3600);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +47,7 @@
             align-items: center;
         }
         
-        form{
+        #f1{
             position: relative;
             left: 70%;
         }
@@ -97,17 +117,32 @@
         h2{
             text-align: center;
         }
+        input{
+            background-color: lightblue;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
         <img src="webroot/logo.png" alt="logo" height="100px"/>
         <h1><b>Inicio Público</b></h1>
-        <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post">
+        <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post" id="f1">
             <input type="submit" id="Login" name="Login" value="Login">
         </form> 
+        
+        <h3>Idioma: </h3>
+        <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post">
+            <input type="submit" name="español" id="español" value="Español">
+            <input type="submit" name="ingles" id="ingles" value="English">
+            <input type="submit" name="portugues" id="portugues" value="Português">
+            <input type="submit" name="ruso" id="ruso" value="Русский">
+        </form>
+        
     </header>
-            <h2>Login</h2>
+
     <footer>
         <h4>2025-26 IES LOS SAUCES. © Todos los derechos reservados.</h4>
         <p><a href="../../AMNDWESProyectoDWES/indexProyectoDWES.php">Alberto Méndez.</a> Fecha de Actualización : 20-11-2025</p>

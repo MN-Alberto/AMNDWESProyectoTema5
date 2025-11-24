@@ -99,6 +99,12 @@
         h2{
             text-align: center;
         }
+        input{
+            background-color: lightblue;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
