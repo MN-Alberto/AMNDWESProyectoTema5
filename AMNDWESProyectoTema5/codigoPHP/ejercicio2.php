@@ -103,9 +103,53 @@
          * Fecha de ultima modificación: 18/11/2025
          * Desarrollo de un control de acceso con identificación del usuario basado en la función header() y en el uso de una tabla “Usuario” de la base de datos. (PDO).
          */
-        ?>
-       
-        <h1>Working...</h1>
+        require_once '../config/confDBPDO.php';
+        
+        if (!isset($_SERVER['PHP_AUTH_USER'])) {
+            header('WWW-Authenticate: Basic Realm="Contenido restringido"');
+            header('HTTP/1.0 401 Unauthorized');
+            echo "Introduce tus credenciales";
+            exit;
+            }
+
+            $usuario = $_SERVER['PHP_AUTH_USER'];
+            $passwd  = $_SERVER['PHP_AUTH_PW'];
+
+            try {
+                $miDB = new PDO(RUTA, USUARIO, PASS);
+                $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $query = "SELECT T01_CodUsuario, T01_Password, T01_DescUsuario 
+                          FROM T01_Usuario 
+                          WHERE T01_CodUsuario = :usuario 
+                          AND T01_Password = SHA2(:passwd, 256)";
+
+                $resultado = $miDB->prepare($query);
+                $resultado->execute([
+                    ':usuario' => $usuario,
+                    ':passwd'  => $passwd
+                ]);
+
+                $usuarioBD = $resultado->fetch(PDO::FETCH_ASSOC);
+
+                if (!$usuarioBD) {
+                    header('WWW-Authenticate: Basic Realm="Contenido restringido"');
+                    header('HTTP/1.0 401 Unauthorized');
+                    echo "Credenciales incorrectas!";
+                    exit;
+                }
+
+            } catch (Exception $ex) {
+                echo "Error: " . $ex->getMessage();
+                exit;
+            }
+
+            ?>
+
+            <section>
+                <h2>Bienvenido <?php echo $usuarioBD['T01_DescUsuario']; ?></h2>
+                <h2>Sesión iniciada correctamente.</h2>
+            </section>    
     </main>
 </body>
 </html>
